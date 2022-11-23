@@ -30,16 +30,21 @@ const main =  async()=>
     changeUsername("Telly.Hoeger@billy.biz", "Eren Yeager")
 
     //We just started a points program and have a list of how many points each user gets each month based on their subscription. [50, 20, 40, 33, 60, 20, 90, 110, 15, 30] 
+    //The array is ordered so that arr[0] ‘50’ is for the first user, etc.
+    //Make a function that will Iterate through this array, grab the data, and create new properties on the objects called monthlyPoints and set it equal to the data
+    //For example to first user should have a property monthlyPoints: 50
+    setMonthlyPoints = (() =>{Points = [50, 20, 40, 33, 60, 20, 90, 110, 15, 30], users.forEach((arg, i) => arg.monthlyPoints = Points[i]);})()
+
+
+    //Make a variable months and set it equal to a number
+    setMonths = (() =>{users.forEach(arg => arg.months = Math.ceil(Math.random() * 12) /* 12 months in a year */)})()
     
-
-
-     //The array is ordered so that arr[0] ‘50’ is for the first user, etc.
-     //Make a function that will Iterate through this array, grab the data, and create new properties on the objects called monthlyPoints and set it equal to the data
-     //For example to first user should have a property monthlyPoints: 50
-     //Make a variable months and set it equal to a number
-     //Make a function that For every month, add points to the users’ account.
-     //This month is special! We are going to add an additional 10% to everyone’s point totals! Create a function to do this (example: if someone has 200 points, we will bump it up to 220)
-     // The user with email Chaim_McDermott@dana.io has submitted a request to delete her account. Make a function that will remove her from the array (taking the email as a parameter).
+    //Make a function that For every month, add points to the users’ account.
+    setMonthlyPoints = (() =>{users.forEach(arg => arg.monthlyPoints += arg.months * 5  /* each month gets 5 points  */)})()
+    
+    //This month is special! We are going to add an additional 10% to everyone’s point totals! Create a function to do this (example: if someone has 200 points, we will bump it up to 220)
+    
+     //The user with email Chaim_McDermott@dana.io has submitted a request to delete her account. Make a function that will remove her from the array (taking the email as a parameter).
 
     console.log(users)
 }
