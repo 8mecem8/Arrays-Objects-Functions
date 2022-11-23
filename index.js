@@ -43,8 +43,11 @@ const main =  async()=>
     setMonthlyPoints = (() =>{users.forEach(arg => arg.monthlyPoints += arg.months * 5  /* each month gets 5 points  */)})()
     
     //This month is special! We are going to add an additional 10% to everyone’s point totals! Create a function to do this (example: if someone has 200 points, we will bump it up to 220)
-    
-     //The user with email Chaim_McDermott@dana.io has submitted a request to delete her account. Make a function that will remove her from the array (taking the email as a parameter).
+    setSpecialPoints = (() =>{users.forEach(arg => arg.monthlyPoints = Math.floor((arg.monthlyPoints + (arg.months * 5))*1.10))})()
+
+    //The user with email Chaim_McDermott@dana.io has submitted a request to delete her account. Make a function that will remove her from the array (taking the email as a parameter).
+    deleteUser = ((email= 'Chaim_McDermott@dana.io' /* email must be string */) =>{return users = users.filter(arg => arg.email !== email)})()
+
 
     console.log(users)
 }
